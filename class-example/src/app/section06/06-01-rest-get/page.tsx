@@ -6,15 +6,15 @@ export default function RestGetPage() {
     console.log(result); // Promise
   };
 
-  // async function AAA(){
-  //     await
+  // async function 함수선언식(){
+  //     await fetch("http://~~")
   // }
   const onClickSync = async () => {
     const result = await fetch(
       "http://main-example.codebootcamp.co.kr/profile/철수"
     );
     const data = await result.json();
-    console.log(data); // 프로필 전체 결과 { ... }
+    console.log(data); // 프로필 전체 결과 { name: "철수", ... }
     console.log(data.name); // 철수
   };
 
