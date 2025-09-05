@@ -27,14 +27,14 @@ export const metadata: Metadata = {
 interface IProps {
   children: React.ReactNode;
 }
-export default function RootLayout(props: IProps) {
+export default function RootLayout({ children }: IProps) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div>=========== 여기 위는 레이아웃 입니다. ===========</div>
-        <ApolloSetting 모든페이지={props.children} />
+        <ApolloSetting 모든페이지={children} />
         <div>=========== 여기 아래는 레이아웃 입니다. ===========</div>
       </body>
     </html>
