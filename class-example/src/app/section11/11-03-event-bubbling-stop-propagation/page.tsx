@@ -19,8 +19,9 @@ export default function MapBoardsDeletePage() {
 
   // const onClickParent = (event) => {
   //   // event.target; => 내가 클릭한 태그
-  //   // event.currentTarget; => 내 클릭이 버블링되어 부모꺼 onClick 실행됐을때, 실행된 그 태그
-  //   alert(`이 글의 작성자는 ${event.currentTarget.id} 입니다.`);
+  //   // event.currentTarget; => 현재 실행된 onClick의 태그
+  //   alert(`내가 클릭한 것: ${event.target.id}`);
+  //   alert(`이동할 게시글ID: ${event.currentTarget.id}`);
   // };
 
   const onClick1 = (event) => {

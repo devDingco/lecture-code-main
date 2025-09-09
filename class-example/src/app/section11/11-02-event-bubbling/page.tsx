@@ -16,23 +16,26 @@ const FETCH_BOARDS = gql`
 export default function MapBoardsDeletePage() {
   const { data } = useQuery(FETCH_BOARDS);
 
-  const onClickParent = (event) => {
+  const onClickFunction = (event) => {
     // event.target; => 내가 클릭한 태그
-    // event.currentTarget; => 내 클릭이 버블링되어 부모꺼 onClick 실행됐을때, 실행된 그 태그
-    alert(`이 글의 작성자는 ${event.currentTarget.id} 입니다.`);
+    // event.currentTarget; => 현재 실행된 onClick의 태그.
+    alert(`
+      내가 클릭한 것: ${event.target.id}
+      지금 onClick 실행중인 태그: ${event.currentTarget.id}
+    `);
   };
 
   return (
     <div>
       {data?.fetchBoards.map((el, index) => {
         return (
-          <div key={el.number} id={el.writer} onClick={onClickParent}>
+          <div key={el.number} id="한줄전체" onClick={onClickFunction}>
             <span>
               <input type="checkbox" />
             </span>
-            <span>{el.number}</span>
-            <span>{el.title}</span>
-            <span>{el.writer}</span>
+            <span id="번호">{el.number}</span>
+            <span id="제목">{el.title}</span>
+            <span id="작성자">{el.writer}</span>
           </div>
         );
       })}
