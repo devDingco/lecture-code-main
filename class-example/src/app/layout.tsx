@@ -45,5 +45,5 @@ export default function RootLayout({ children }: IProps) {
 // 1. 게시판 페이지에 접속
 // 2. 내부적으로 루트레이아웃이 실행됨
 //    <RootLayout>
-//      <BoardsPage />
+//      <BoardsPage />    => 페이지 컴포넌트
 //    </RootLayout>;
