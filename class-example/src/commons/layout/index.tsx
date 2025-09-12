@@ -1,14 +1,24 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import LayoutBanner from "./banner";
 import LayoutFooter from "./footer";
 import LayoutHeader from "./header";
 import LayoutNavigation from "./navigation";
 
+const HIDDEN_HEADERS = [
+  "/section04/04-01-aaa", //
+  "/section04/04-02-css-moduleb",
+];
+
 export default function Layout({ children }) {
+  const pathname = usePathname();
+
+  const isHiddenHeader = HIDDEN_HEADERS.includes(pathname);
+
   return (
     <>
-      <LayoutHeader />
+      {!isHiddenHeader && <LayoutHeader />}
       <LayoutBanner />
       <LayoutNavigation />
       <div style={{ height: "500px", display: "flex" }}>

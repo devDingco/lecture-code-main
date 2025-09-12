@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import ApolloSetting from "@/commons/providers/06-02-apollo-provider";
+import ApiProvider from "@/commons/providers/13-04-api-provider";
 import Layout from "@/commons/layout";
 
 const geistSans = localFont({
@@ -35,9 +35,30 @@ export default function RootLayout({ children }: IProps) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div>=========== 여기 위는 레이아웃 입니다. ===========</div>
-        <Layout>
-          <ApolloSetting 모든페이지={children} />
-        </Layout>
+        {/* 06-02) 내가접속한페이지에 Apollo(graphql 기능 보따리) 셋팅하기  */}
+        {/* <ApolloSetting 내가접속한페이지={children} /> */}
+
+        {/* 13-02) 커스텀 레이아웃 */}
+        {/* <Layout>
+          <ApolloSetting 내가접속한페이지={children} />
+        </Layout> */}
+
+        {/* 13-04) 1. 레이아웃도 Graphql 가능하도록 셋팅 변경하기 */}
+        {/* <ApolloSetting 내가접속한페이지={<Layout>{children}</Layout>} /> */}
+
+        {/* 13-04) 2. props로 JSX넘기기: children 1번째 방법 */}
+        {/* <ApolloSetting children={<Layout>{children}</Layout>} /> */}
+
+        {/* 13-04) 3. props로 JSX넘기기: children 2번째 방법 */}
+        {/* <ApolloSetting>
+          <Layout>{children}</Layout>
+        </ApolloSetting> */}
+
+        {/* 13-04) 4. 실무형 컴포넌트 합성 */}
+        <ApiProvider>
+          <Layout>{children}</Layout>
+        </ApiProvider>
+
         <div>=========== 여기 아래는 레이아웃 입니다. ===========</div>
       </body>
     </html>
