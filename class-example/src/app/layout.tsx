@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ApolloSetting from "@/commons/providers/06-02-apollo-provider";
+import Layout from "@/commons/layout";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +35,9 @@ export default function RootLayout({ children }: IProps) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div>=========== 여기 위는 레이아웃 입니다. ===========</div>
-        <ApolloSetting 모든페이지={children} />
+        <Layout>
+          <ApolloSetting 모든페이지={children} />
+        </Layout>
         <div>=========== 여기 아래는 레이아웃 입니다. ===========</div>
       </body>
     </html>
