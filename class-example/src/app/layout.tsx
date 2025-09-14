@@ -73,10 +73,3 @@ export default function RootLayout(props: IProps) {
     </html>
   );
 }
-
-// 13-01) 페이지 접속시 작동 원리
-// 1. 게시판 페이지에 접속
-// 2. 내부적으로 루트레이아웃이 실행됨
-//    <RootLayout>
-//      <BoardsPage />    => 페이지 컴포넌트
-//    </RootLayout>;
