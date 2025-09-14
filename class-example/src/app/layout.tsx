@@ -28,35 +28,44 @@ export const metadata: Metadata = {
 interface IProps {
   children: React.ReactNode;
 }
-export default function RootLayout({ children }: IProps) {
+export default function RootLayout(props: IProps) {
+  // Nextjs 작동방식
+  // => 우리 눈에는 안보이지만, 특정 페이지 접속시 내부적으로 <RootLayout children={내가 접속한 페이지의 모든 태그} /> 실행됨
+  // ex) /mypage 접속:
+  //     <RootLayout children={<div>여기는 내가 접속한 페이지 입니다.</div>} /> 실행
+  const 내가접속한페이지 = props.children;
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <div>=========== 여기 위는 레이아웃 입니다. ===========</div>
-        {/* 06-02) 내가접속한페이지에 Apollo(graphql 기능 보따리) 셋팅하기  */}
-        {/* <ApolloSetting 내가접속한페이지={children} /> */}
+        {/* 04-01) 내가접속한페이지가 레이아웃과 결합되어 브라우저에서 보여짐 => 레이아웃 따로 안만들어도 되는 장점 */}
+        {/* {내가접속한페이지} */}
 
-        {/* 13-02) 커스텀 레이아웃 */}
+        {/* 06-02) 내가접속한페이지에 Apollo(graphql 기능 보따리) 셋팅하기  */}
+        {/* <ApolloSetting 내가접속한페이지={내가접속한페이지} /> */}
+
+        {/* 13-02) 커스텀레이아웃 */}
         {/* <Layout>
-          <ApolloSetting 내가접속한페이지={children} />
+          <ApolloSetting 내가접속한페이지={내가접속한페이지} />
         </Layout> */}
 
-        {/* 13-04) 1. 레이아웃도 Graphql 가능하도록 셋팅 변경하기 */}
-        {/* <ApolloSetting 내가접속한페이지={<Layout>{children}</Layout>} /> */}
+        {/* 13-04) 1. 커스텀레이아웃도 Graphql 가능하도록 셋팅 변경하기 */}
+        {/* <ApolloSetting 내가접속한페이지={<Layout>{내가접속한페이지}</Layout>} /> */}
 
         {/* 13-04) 2. props로 JSX넘기기: children 1번째 방법 */}
-        {/* <ApolloSetting children={<Layout>{children}</Layout>} /> */}
+        {/* <ApolloSetting children={<Layout>{내가접속한페이지}</Layout>} /> */}
 
         {/* 13-04) 3. props로 JSX넘기기: children 2번째 방법 */}
         {/* <ApolloSetting>
-          <Layout>{children}</Layout>
+          <Layout>{내가접속한페이지}</Layout>
         </ApolloSetting> */}
 
         {/* 13-04) 4. 실무형 컴포넌트 합성 */}
         <ApiProvider>
-          <Layout>{children}</Layout>
+          <Layout>{내가접속한페이지}</Layout>
         </ApiProvider>
 
         <div>=========== 여기 아래는 레이아웃 입니다. ===========</div>
