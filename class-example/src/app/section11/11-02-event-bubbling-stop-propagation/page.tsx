@@ -1,7 +1,7 @@
 "use client";
 
 import { gql, useQuery } from "@apollo/client";
-import Checkbox from "./checkbox";
+import Checkbox from "@/components/11-02-event-bubbling-stop-propagation-checkbox";
 
 const FETCH_BOARDS = gql`
   query {

@@ -1,3 +1,5 @@
+"use client";
+
 export default function Checkbox() {
   const onClick2 = (event) => {
     event.stopPropagation();
