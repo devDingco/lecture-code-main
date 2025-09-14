@@ -23,11 +23,11 @@ export default function MapBoardsDeletePage() {
   //   alert(`이동할 게시글ID: ${event.currentTarget.id}`);
   // };
 
-  const onClickLike = (event) => {
+  const onClickDelete = (event) => {
     event.stopPropagation(); // 전파를 막는 것이지, 기본 기능을 막는 것은 아님!
     // event.preventDefault(); // 기본 기능을 막음
 
-    alert("좋아요가 +1 올랐습니다.");
+    alert("게시글이 삭제되었습니다.");
   };
 
   return (
@@ -42,7 +42,9 @@ export default function MapBoardsDeletePage() {
               <span>{el.number}</span>
               <span>{el.title}</span>
               <span>{el.writer}</span>
-              <span onClick={onClickLike}>좋아요</span>
+              <span>
+                <button onClick={onClickDelete}>삭제</button>
+              </span>
             </div>
           </a>
         );
