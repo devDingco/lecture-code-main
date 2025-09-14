@@ -14,11 +14,11 @@ const HIDDEN_HEADERS = [
 export default function Layout({ children }) {
   const pathname = usePathname();
 
-  const isHiddenHeader = HIDDEN_HEADERS.includes(pathname);
+  const isShowHeader = HIDDEN_HEADERS.includes(pathname) ? false : true;
 
   return (
     <>
-      {!isHiddenHeader && <LayoutHeader />}
+      {isShowHeader && <LayoutHeader />}
       <LayoutBanner />
       <LayoutNavigation />
       <div style={{ height: "500px", display: "flex" }}>
