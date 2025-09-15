@@ -1,0 +1,12 @@
+/* *****************************
+* {
+  box-sizing: border-box;  => 이거(reset css) 안써도 됨. @tailwind base; 여기에 들어가 있음
+}
+***************************** */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: var(--글로벌폰트변수);
+}
