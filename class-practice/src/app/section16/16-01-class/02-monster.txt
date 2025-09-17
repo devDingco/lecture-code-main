@@ -1,0 +1,41 @@
+class Monster {
+    power = 50
+
+    attack(){
+        console.log("공격합니다.")
+    }
+    
+}
+undefined
+const 나의몬스터 = new Monster()
+undefined
+나의몬스터.power
+50
+나의몬스터.attck()
+VM668:1 Uncaught TypeError: 나의몬스터.attck is not a function
+    at <anonymous>:1:7
+나의몬스터.attack()
+VM424:5 공격합니다.
+undefined
+class 슈퍼몬스터 extends Monster {
+    run() {
+        console.log("도망가자!!!")
+    }
+
+    // 오버라이딩
+    attack(){
+        console.log("슈퍼몬스터 필살기!!")
+    }
+}
+undefined
+const mymonster = new 슈퍼몬스터()
+undefined
+mymonster.power
+50
+mymonster.run()
+VM844:3 도망가자!!!
+undefined
+mymonster.attack()
+VM844:8 슈퍼몬스터 필살기!!
+undefined
+﻿

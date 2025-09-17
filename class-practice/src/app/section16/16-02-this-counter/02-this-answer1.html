@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>this의 이해</title>
+    <script>
+      class 카운터컴포넌트 {
+        count = 10;
+
+        // 해결방법1) 함수를 최신 함수인 화살표함수로 바꾸면 해결.
+        onClickCountUp = () => {
+          console.log("onClickCountUp에서의 this는? ", this); // this: 버튼 => 실행 주체가 누구냐에 따라 바뀜
+
+          this.count = this.count + 1;
+          console.log(this.count);
+        };
+
+        render() {
+          console.log("render에서의 this는? ", this); // this: 카운터컴포넌트 => 최초 렌더 시점
+
+          const button = document.createElement("button");
+          //   button.count = 50;
+          button.innerText = "카운트 올리기!!";
+          button.addEventListener("click", this.onClickCountUp);
+          document.body.appendChild(button);
+        }
+      }
+
+      window.onload = () => {
+        const 카운터 = new 카운터컴포넌트();
+        카운터.render();
+      };
+    </script>
+  </head>
+  <body></body>
+</html>
