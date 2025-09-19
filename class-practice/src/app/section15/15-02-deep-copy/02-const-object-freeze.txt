@@ -19,3 +19,5 @@ profile.name = "맹구"
 '맹구'
 profile
 {name: '영희', age: 12}
+Object.getOwnPropertyDescriptors(profile)
+{name: {…}, age: {…}}
