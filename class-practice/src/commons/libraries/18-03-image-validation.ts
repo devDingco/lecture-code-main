@@ -1,4 +1,4 @@
-export const checkValidationFile = (file: File) => {
+export const checkValidationFile = (file?: File) => {
   if (typeof file === "undefined") {
     alert("파일이 없습니다!");
     return false;
