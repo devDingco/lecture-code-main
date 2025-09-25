@@ -4,7 +4,7 @@ import "./globals.css";
 import ApiProvider from "@/commons/providers/13-04-api-provider";
 import Layout from "@/commons/layout";
 import ApiUploadProvider from "@/commons/providers/18-01-api-upload-provider";
-import ApiHeaderProvider from "@/commons/providers/20-01-api-header-provider";
+import ApiHeaderProvider from "@/commons/providers/20-03-api-header-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -42,6 +42,11 @@ export default function RootLayout({
         </ApiUploadProvider> */}
 
         {/* 20-01 로그인토큰 */}
+        {/* <ApiHeaderProvider>
+          <Layout>{children}</Layout>
+        </ApiHeaderProvider> */}
+
+        {/* 20-03 로그인토큰 - 로컬스토리지 */}
         <ApiHeaderProvider>
           <Layout>{children}</Layout>
         </ApiHeaderProvider>
