@@ -19,6 +19,8 @@ export default function ReactHookFormAfterPage() {
       <br />
       내용: <input type="text" {...register("content")} />
       <br />
+      주소: <input type="text" {...register("boardAddress.addressDetail")} />
+      <br />
       <button>게시글 등록하기</button>
     </form>
   );
