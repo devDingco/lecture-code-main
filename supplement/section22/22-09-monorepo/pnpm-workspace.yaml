@@ -1,0 +1,5 @@
+packages:
+  - "@commons/ui"
+  - "frontend-admin"
+  - "frontend-owner"
+  - "frontend-user"
