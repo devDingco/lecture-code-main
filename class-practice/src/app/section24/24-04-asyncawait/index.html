@@ -3,7 +3,7 @@
   <head>
     <title>Promise 실습</title>
     <script>
-      const 프로필조회기능PromiseThen = () => {
+      const 프로필조회기능Then = () => {
         // 기다렸다가 성공/실패 처리하는 기능들 성공/실패 처리 통합을 위해 사용
         new Promise((resolve, reject) => {
           // 서버에 프로필조회API 요청하는데 3초 걸리는 상황을 가정
@@ -22,7 +22,7 @@
         console.log("끝났습니다!");
       };
 
-      const 프로필조회기능AsyncAwait = async () => {
+      const 프로필조회기능Await = async () => {
         // 기다렸다가 성공/실패 처리하는 기능들 성공/실패 처리 통합을 위해 사용
         const 성공한결과 = await new Promise((resolve, reject) => {
           // 서버에 프로필조회API 요청하는데 3초 걸리는 상황을 가정
@@ -43,9 +43,7 @@
     </script>
   </head>
   <body>
-    <button onclick="프로필조회기능PromiseThen()">
-      프로필조회(PromiseThen)
-    </button>
-    <button onclick="프로필조회기능AsyncAwait()">프로필조회(AsyncAwait)</button>
+    <button onclick="프로필조회기능Then()">프로필조회(.then)</button>
+    <button onclick="프로필조회기능Await()">프로필조회(await)</button>
   </body>
 </html>
