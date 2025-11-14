@@ -39,8 +39,9 @@ export default function MemoizationPraticePage() {
       {new Array(1000).fill(1).map((el, index) => (
         <Row
           num={index + 1}
-          onClickCheckItem={onClickCheckItem}
           isChecked={checkList.includes(index + 1)}
+          onClickCheckItem={onClickCheckItem}
+          // onClickCheckItem={() => { ... }} 와 같이 함수를 만들어서 바인딩이 하는 방식 => 매번 새 함수가 만들어져서 memo가 무시됨
         />
       ))}
     </div>

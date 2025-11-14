@@ -13,19 +13,19 @@ export default function ReRenderPage() {
   console.log(aaa);
 
   const onClickCountLet = useCallback(() => {
-    console.log("이전카운트: ", countLet);
+    console.log("변경전 카운트: ", countLet);
     countLet += 1; // countLet = countLet + 1
   }, []);
 
   const onClickCountState = useCallback(() => {
-    console.log("이전카운트: ", countState);
+    // console.log("변경전 카운트: ", countState);
     setCountState((prev) => prev + 1);
   }, []);
 
   // 변형1) useMemo로 useCallback 만들기 응용
   const onClickCountState2 = useMemo(
     () => () => {
-      console.log("이전카운트: ", countState);
+      // console.log("변경전 카운트: ", countState);
       setCountState(countState + 1);
     },
     []

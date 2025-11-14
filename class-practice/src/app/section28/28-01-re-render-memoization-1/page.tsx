@@ -18,7 +18,7 @@ export default function ReRenderPage() {
   }, []);
 
   const onClickCountState = useCallback(() => {
-    console.log("변경전 카운트: ", countState);
+    // console.log("변경전 카운트: ", countState);
     setCountState((prev) => prev + 1);
   }, []);
 
