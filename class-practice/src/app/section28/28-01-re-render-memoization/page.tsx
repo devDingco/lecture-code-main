@@ -22,6 +22,15 @@ export default function ReRenderPage() {
     setCountState((prev) => prev + 1);
   }, []);
 
+  // 변형1) useMemo로 useCallback 만들기 응용
+  const onClickCountState2 = useMemo(
+    () => () => {
+      // console.log("변경전 카운트: ", countState);
+      setCountState(countState + 1);
+    },
+    []
+  );
+
   return (
     <>
       <div>카운트(let): {countLet}</div>
@@ -29,6 +38,10 @@ export default function ReRenderPage() {
 
       <div>카운트(state): {countState}</div>
       <button onClick={onClickCountState}>카운트(state) +1 올리기</button>
+
+      {/* 변형1) useMemo로 useCallback 만들기 응용 */}
+      <div>카운트(state): {countState}</div>
+      <button onClick={onClickCountState2}>카운트(state) +1 올리기</button>
     </>
   );
 }
