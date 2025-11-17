@@ -28,19 +28,16 @@ export default function OptimisticUiPage() {
       variables: {
         boardId: "691a992ad4299d0029cd2970",
       },
-      // refetchQueries: [{query: FETCH_BOARD}]
+      // refetchQueries: [{query: FETCH_BOARD}],
       optimisticResponse: {
         likeBoard: (data?.fetchBoard.likeCount ?? 0) + 1,
       },
       update: (cache, { data }) => {
-        cache.writeQuery({
-          query: FETCH_BOARD,
-          variables: { boardId: "691a992ad4299d0029cd2970" },
-          data: {
-            fetchBoard: {
-              _id: "691a992ad4299d0029cd2970",
-              __typename: "Board",
-              likeCount: data.likeBoard, // 좋아요 갯수(8개 가정)
+        cache.modify({
+          id: "Board:691a992ad4299d0029cd2970",
+          fields: {
+            likeCount: (prev) => {
+              return data.likeBoard;
             },
           },
         });
