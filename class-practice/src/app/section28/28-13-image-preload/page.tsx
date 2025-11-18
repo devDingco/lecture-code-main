@@ -9,7 +9,7 @@ export default function ImagePreloadPage() {
   // 테스트 방법:
   // 1. network 탭 열기(Disabled cache 체크하지 않기)
   // 2. 페이지 접속(또는 새로고침)
-  // 3. 페이지 이동시, network 탭에서 이미지 비요청 확인
+  // 3. 페이지 이동시, network 탭에서 이미지 비요청 확인 => [브라우저 인터넷 사용 기록 삭제] 탭에서 [캐시된 이미지 및 파일] 용량 증가 확인 가능
   useEffect(() => {
     const img = new Image();
     img.src =
@@ -20,7 +20,7 @@ export default function ImagePreloadPage() {
   }, []);
 
   return (
-    <Link href={"/section28/28-14-image-preload-moved"}>
+    <Link href={"/section28/28-13-image-preload-moved"}>
       이벤트 페이지로 이동하기
     </Link>
   );
