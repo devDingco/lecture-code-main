@@ -67,7 +67,7 @@ export default function PaginationPage() {
           )}
         </FixedSizeList>
       </InfiniteScroll>
-      <Link href={"/section28/28-15-infinite-scroll-without-windowing-moved"}>
+      <Link href={"/section28/28-14-infinite-scroll2-without-windowing-moved"}>
         페이지 이동하기
       </Link>
     </div>

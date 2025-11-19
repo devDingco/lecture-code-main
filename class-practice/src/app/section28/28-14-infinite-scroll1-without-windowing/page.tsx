@@ -43,7 +43,7 @@ export default function PaginationPage() {
   return (
     <div>
       {/* 페이지 이탈시보다 재진입시 훨씬 느림(div 삽입 이슈) => performance 녹화해서 확인하기 */}
-      <Link href={"/section28/28-15-infinite-scroll-without-windowing-moved"}>
+      <Link href={"/section28/28-14-infinite-scroll1-without-windowing-moved"}>
         페이지 이동하기
       </Link>
       <InfiniteScroll
