@@ -6,6 +6,7 @@ import Layout from "@/commons/layout";
 import ApiUploadProvider from "@/commons/providers/18-01-api-upload-provider";
 import ApiHeaderProvider from "@/commons/providers/20-03-api-header-provider";
 import ApiRefreshtokenProvider from "@/commons/providers/30-01-api-refreshtoken-provider";
+import ApiRefreshtokenRefreshProvider from "@/commons/providers/30-02-api-refreshtoken-refresh-provider";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -53,9 +54,14 @@ export default function RootLayout({
         </ApiHeaderLocalstorageProvider> */}
 
         {/* 30-01 리프레시토큰 */}
-        <ApiRefreshtokenProvider>
+        {/* <ApiRefreshtokenProvider>
           <Layout>{children}</Layout>
-        </ApiRefreshtokenProvider>
+        </ApiRefreshtokenProvider> */}
+
+        {/* 30-02 리프레시토큰 - 새로고침 */}
+        <ApiRefreshtokenRefreshProvider>
+          <Layout>{children}</Layout>
+        </ApiRefreshtokenRefreshProvider>
       </body>
     </html>
   );
