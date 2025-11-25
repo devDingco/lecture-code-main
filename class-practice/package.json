@@ -28,6 +28,7 @@
     "react-dom": "^18",
     "react-hook-form": "^7.63.0",
     "react-infinite-scroll-component": "~6.1.0",
+    "react-quill": "^2.0.0",
     "react-window": "1.8.10",
     "uuid": "^13.0.0",
     "zod": "^4.1.11",
