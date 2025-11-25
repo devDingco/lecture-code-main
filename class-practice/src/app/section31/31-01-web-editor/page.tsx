@@ -3,6 +3,7 @@
 // import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
 const ReactQuill = dynamic(() => import("react-quill"), {
   ssr: false,
@@ -21,6 +22,11 @@ export default function WebEditorPage() {
     const { Modal } = await import("antd");
     Modal.success({ content: "게시글 등록에 성공하였습니다!!" });
   };
+
+  // 백그라운드 임포트
+  // useEffect(() => {
+  //   const { Modal } = await import("antd");
+  // }, []);
 
   return (
     <form onSubmit={onSubmit}>
