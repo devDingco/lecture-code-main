@@ -29,6 +29,9 @@ importers:
       apollo-upload-client:
         specifier: ^18.0.1
         version: 18.0.1(@apollo/client@3.11.10(@types/react@18.3.24)(graphql@16.11.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(graphql@16.11.0)
+      dompurify:
+        specifier: ^3.3.0
+        version: 3.3.0
       graphql:
         specifier: ^16.11.0
         version: 16.11.0
@@ -1308,6 +1311,9 @@ packages:
   '@types/tough-cookie@4.0.5':
     resolution: {integrity: sha512-/Ad8+nIOV7Rl++6f1BdKxFSMgmoqEoYbHRpPcx3JEfv8VRsQe9Z4mCXeJBzxs7mbHY/XOZZuXlRNfhpVPbs6ZA==}
 
+  '@types/trusted-types@2.0.7':
+    resolution: {integrity: sha512-ScaPdn1dQczgbl0QFTeTOmVHFULt394XJgOQNoyVhZ6r2vLnMLJfBPd53SB52T/3G36VI1/g2MZaX0cwDuXsfw==}
+
   '@types/ws@8.18.1':
     resolution: {integrity: sha512-ThVF6DCVhA8kUGy+aazFQ4kXQ7E1Ty7A3ypFOe0IcJV8O/M511G99AW24irKrW56Wt44yG9+ij8FaqoBGkuBXg==}
 
@@ -2017,6 +2023,9 @@ packages:
 
   dom-accessibility-api@0.6.3:
     resolution: {integrity: sha512-7ZgogeTnjuHbo+ct10G9Ffp0mif17idi0IyWNVA/wcwcm7NPOD/WEHVP3n7n3MhXqxoIYm8d6MuZohYWIZ4T3w==}
+
+  dompurify@3.3.0:
+    resolution: {integrity: sha512-r+f6MYR1gGN1eJv0TVQbhA7if/U7P87cdPl3HN5rikqaBSBxLiCb/b9O+2eG0cxz0ghyU+mU1QkbsOwERMYlWQ==}
 
   dot-case@3.0.4:
     resolution: {integrity: sha512-Kv5nKlh6yRrdrGvxeJ2e5y2eRUpkUosIW4A2AS38zwSz27zu7ufDwQPi5Jhs3XAlGNetl3bmnGhQsMtkKJnj3w==}
@@ -6016,6 +6025,9 @@ snapshots:
 
   '@types/tough-cookie@4.0.5': {}
 
+  '@types/trusted-types@2.0.7':
+    optional: true
+
   '@types/ws@8.18.1':
     dependencies:
       '@types/node': 20.19.11
@@ -6808,6 +6820,10 @@ snapshots:
   dom-accessibility-api@0.5.16: {}
 
   dom-accessibility-api@0.6.3: {}
+
+  dompurify@3.3.0:
+    optionalDependencies:
+      '@types/trusted-types': 2.0.7
 
   dot-case@3.0.4:
     dependencies:
