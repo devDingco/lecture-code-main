@@ -4,7 +4,9 @@ export default function Home() {
   return (
     <>
       <div>철수네 홈페이지에 오신 것을 환영합니다.</div>
+      <br />
       <Link href="/boards">게시글 목록으로</Link>
+      <br />
       <Link href="/products">상품 목록으로</Link>
     </>
   );

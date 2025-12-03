@@ -17,6 +17,7 @@ const nextConfig = {
           }/remoteEntry.js`,
         },
         filename: "static/chunks/remoteEntry.js",
+        shared: {},
       })
     );
 

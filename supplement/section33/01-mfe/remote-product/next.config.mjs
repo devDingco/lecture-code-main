@@ -12,6 +12,7 @@ const nextConfig = {
           "./products-detail": "./src/components/products-detail/index.tsx",
         },
         filename: "static/chunks/remoteEntry.js",
+        shared: {},
       })
     );
 
