@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>네트워크 트러블슈팅</title>
+    <script>
+      // 응답지연-1) 방화벽 문제
+      const onClickButton1 = async () => {
+        const result = await fetch(
+          "http://timeout-test.codebootcamp.co.kr:81/qqq"
+        );
+        console.log(result);
+      };
+
+      // 응답지연-2) API 문제
+      const onClickButton2 = async () => {
+        const result = await fetch(
+          "http://timeout-test.codebootcamp.co.kr:80/qqq"
+        );
+        console.log(result);
+      };
+    </script>
+  </head>
+  <body>
+    <button onclick="onClickButton1()">요청하기-1</button>
+    <button onclick="onClickButton2()">요청하기-2</button>
+  </body>
+</html>

@@ -1,0 +1,15 @@
+version: "3.7"
+
+# 컴퓨터들
+services:
+  # 컴퓨터이름
+  my-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 2500:3000
+
+  # my-backend: ...
+
+  # my-database: ...
