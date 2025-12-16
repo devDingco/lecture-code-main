@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@apollo/server": "^5.2.0",
+    "graphql": "^16.12.0"
+  }
+}
